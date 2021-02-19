@@ -1,16 +1,18 @@
-# from django.contrib.auth.models import User, Group
-# from rest_framework import serializers
+from rest_framework import serializers	
+from .models import Test
+
+
+class TestSerializers(serializers.ModelSerializer):
+	class Meta:
+		model = Test
+		fields = '__all__'
 
 
 
+# class DemoSerializer(serializers.Serializer):
+# 	zip_code = serializers.CharField(max_length=10)
+# 	city = serializers.CharField(max_length=10)
+# 	age = serializers.IntegerField()
 
-# class UserSerializer(serializers.HyperlinkModelSerializer):
-# 	class Meta:
-# 		model  = User
-# 		fields = ('url', 'username', 'email', 'groups')
-
-
-# class GroupSerializer(serializers.HyperlinkModelSerializer):
-# 	class Meta:
-# 		model  = Group
-# 		fields = ('url', 'name')
+# 	def __str__(self):
+# 		return "DemoSerializer object"
