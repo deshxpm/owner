@@ -7,6 +7,8 @@ from .choice import *
 
 class UserRegister(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="userdetail")
+	fullname = models.CharField(max_length=255)
+	mobile = models.BigIntegerField()
 	userstatus = models.IntegerField(choices=STATUS_CHOICE, default=1)
 	userrole = models.IntegerField(choices=USER_ROLE, default=1)
 
